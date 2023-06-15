@@ -1,0 +1,115 @@
+header {
+  height: 27.9rem;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  font-family: var(--font-secondary);
+}
+
+body {
+  background-color: var(--secondary-color);
+  font-family: var(--font-primary);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --primary-color: #8e9aaf;
+  --secondary-color: #eff1ff;
+  --font-primary: "Palanquin", sans-serif;
+  --font-secondary: "Staatliches", sans-serif;
+  --logo-color: #cbc0d3;
+  --icon-color: #FEEAFA;
+}
+
+.title {
+  background-color: var(--logo-color);
+  text-align: center;
+  width: 100%;
+}
+
+.title h1 {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+header img {
+  width: 13.7rem;
+  height: 13.7rem;
+  margin-bottom: 3.2rem;
+}
+
+main {
+  margin: 1.4rem 3.2rem 6rem;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+main p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #23053a;
+  max-width: 30.5rem;
+  font-weight: 400;
+  margin-bottom: 3.1rem;
+}
+
+.card{
+  position: relative;
+  animation: top-down 700ms 350ms forwards;
+}
+
+.card img{
+  max-width: 30.5rem;
+}
+
+.card-title{
+  background-color: var(--icon-color);
+  border-radius: 2rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  padding: 0.8rem 2.4rem;
+  animation: down-top 700ms 350ms forwards;
+}
+
+@keyframes top-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes down-top {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
