@@ -7,6 +7,11 @@ header {
   justify-content: center;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
 h1,
 h2 {
   font-family: var(--font-secondary);
@@ -30,12 +35,15 @@ body {
   --font-primary: "Palanquin", sans-serif;
   --font-secondary: "Staatliches", sans-serif;
   --logo-color: #cbc0d3;
-  --icon-color: #FEEAFA;
+  --icon-color: #feeafa;
 }
 
 .title {
   background-color: var(--logo-color);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -53,16 +61,16 @@ header img {
   margin-bottom: 3.2rem;
 }
 
-main {
-  margin: 1.4rem 3.2rem 6rem;
-  display: flex;
+.paragraph,
+.cards {
+  display: grid;
   gap: 3.2rem;
-  align-items: center;
-  flex-direction: column;
+  place-content: center;
+  place-items: center;
   text-align: center;
 }
 
-main p {
+.paragraph p {
   font-size: 2rem;
   line-height: 2.5rem;
   color: #23053a;
@@ -71,16 +79,20 @@ main p {
   margin-bottom: 3.1rem;
 }
 
-.card{
+.paragraph {
+  margin: 1.4rem 3.2rem;
+}
+
+.card {
   position: relative;
   animation: top-down 700ms 350ms forwards;
 }
 
-.card img{
+.card img {
   max-width: 30.5rem;
 }
 
-.card-title{
+.cards h2 {
   background-color: var(--icon-color);
   border-radius: 2rem;
   position: absolute;
@@ -88,6 +100,10 @@ main p {
   top: 1.6rem;
   padding: 0.8rem 2.4rem;
   animation: down-top 700ms 350ms forwards;
+}
+
+.hide {
+  display: none;
 }
 
 @keyframes top-down {
@@ -111,5 +127,181 @@ main p {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 1440px) {
+  .page {
+    flex-direction: row;
+    gap: 9.8rem;
+  }
+
+  .header {
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+
+  .paragraph p {
+    color: #fff;
+    font-size: 2em;
+    line-height: 2em;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .title {
+    text-align: center;
+    height: 7rem;
+  }
+
+  .paragraph {
+    margin-bottom: 12.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "A B C"
+      "D B F"
+      "D E F"
+      "footer footer footer";
+    margin: 4rem auto 3.125rem auto;
+    width: auto;
+    min-width: 743px;
+    max-width: 60vw;
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .cards div:nth-child(7) {
+    grid-area: footer;
+  }
+
+  .hide {
+    display: grid;
+  }
+
+  .show {
+    display: none;
+  }
+
+  .footer {
+    width: 59.2rem;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .card img {
+    max-width: 22rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    flex-direction: row;
+    gap: 4.4rem;
+  }
+
+  .header {
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+
+  .paragraph p {
+    color: #fff;
+    font-size: 2em;
+    line-height: 2em;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .title {
+    text-align: center;
+    height: 7rem;
+  }
+
+  .paragraph {
+    margin-bottom: 12.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "A B C"
+      "D B F"
+      "D E F"
+      "footer footer footer";
+    margin: 4rem auto 3.125rem auto;
+    width: auto;
+    min-width: 743px;
+    max-width: 60vw;
+  }
+
+  .cards div:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5) {
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6) {
+    grid-area: F;
+  }
+
+  .cards div:nth-child(7) {
+    grid-area: footer;
+  }
+
+  .hide {
+    display: grid;
+  }
+
+  .show {
+    display: none;
+  }
+
+  .footer {
+    width: 59.2rem;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .card img {
+    max-width: 22rem;
   }
 }
